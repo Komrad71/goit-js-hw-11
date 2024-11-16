@@ -1,3 +1,9 @@
+// Описаний у документації
+import iziToast from "izitoast";
+// Додатковий імпорт стилів
+import "izitoast/dist/css/iziToast.min.css";
+// npm install izitoast --save
+
 // Імпортуємо функції
 import { fetchImages } from "./js/pixabay-api";
 import { renderGallery } from "./js/render-functions";
@@ -35,7 +41,7 @@ form.addEventListener("submit", async (event) => {
 });
 
 function showError(message) {
-  iziToast.error({ title: "Error", message });
+  iziToast.error({ title: "Error", position: 'topRight', message });
 }
 
 // Функція для відображення/приховування індикатора завантаження
