@@ -17,7 +17,10 @@ export function renderGallery(images) {
   // Замінюємо вміст галереї на нові зображення, згенеровані за допомогою createImageCardMarkup
   galleryEl.innerHTML = images.map(createImageCardMarkup).join("");
   
-  new SimpleLightbox('.gallery a').refresh();
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250  // Затримка перед показом підпису
+}).refresh();
 }
 
 // Допоміжна функція, яка створює HTML-розмітку для кожного зображення
