@@ -34,7 +34,6 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-// відображення повідомлень про помилки
 function showError(message) {
   iziToast.error({ title: "Error", message });
 }

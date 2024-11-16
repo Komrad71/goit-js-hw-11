@@ -12,9 +12,8 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 const galleryEl = document.querySelector(".gallery");
 
-// Функція для рендерингу зображень у галерею
 export function renderGallery(images) {
-  // Замінюємо вміст галереї на нові зображення, згенеровані за допомогою createImageCardMarkup
+  // Замінюємо вміст галереї на нові зображення
   galleryEl.innerHTML = images.map(createImageCardMarkup).join("");
   
 new SimpleLightbox('.gallery a', {
@@ -23,9 +22,7 @@ new SimpleLightbox('.gallery a', {
 }).refresh();
 }
 
-// Допоміжна функція, яка створює HTML-розмітку для кожного зображення
 function createImageCardMarkup(image) {
-  // Повертає розмітку для картки зображення, включаючи зображення та інформацію про нього
   return `
     <a href="${image.largeImageURL}" class="gallery_item">
       <img src="${image.webformatURL}" alt="${image.tags}" class="gallery_image" width="380"/>
@@ -46,7 +43,6 @@ function createImageCardMarkup(image) {
 
 // // Допоміжна функція, яка створює HTML-розмітку для кожного зображення
 // function createImageCardMarkup({ largeImageURL, webformatURL, tags, likes, views, comments, downloads }) {
-//   // Повертає розмітку для картки зображення, включаючи зображення та інформацію про нього
 //   return `
 //     <a href="${largeImageURL}" class="gallery__item">
 //       <img src="${webformatURL}" alt="${tags}" loading="lazy" />
@@ -60,7 +56,7 @@ function createImageCardMarkup(image) {
 //   `;
 // }
 
-// Функція для показу повідомлення, якщо пошук не дав результатів
+// виводимо повідомлення - пошук не дав результатів
 export function showNoResultsMessage() {
   // виводимо повідомлення про помилку
   iziToast.error({ 
@@ -69,8 +65,7 @@ export function showNoResultsMessage() {
     position: 'topRight' 
   });
 }
-
-// Функція для очищення галереї
+// Функція очищення галереї
 export function clearGallery() {
   galleryEl.innerHTML = "";
 }
